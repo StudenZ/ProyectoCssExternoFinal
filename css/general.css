@@ -1,10 +1,11 @@
 /* ============================================================
-   BLOQUE 1: CONFIGURACION GENERAL
+   BLOQUE 1: CONFIGURACIÓN GENERAL
    Selector universal, body, fuente, fondo, color e interlineado.
    ============================================================ */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 }
 
 /* ============================================================
-   BLOQUE 2: TITULOS, PARRAFOS Y ENLACES
+   BLOQUE 2: TÍTULOS, PÁRRAFOS Y ENLACES
    Estilos para h1, h2, h3, p, a y a:hover.
    ============================================================ */
 h1 {
@@ -58,7 +59,7 @@ a:hover {
 }
 
 /* ============================================================
-   BLOQUE 3: ELEMENTOS SEMANTICOS PRINCIPALES
+   BLOQUE 3: ELEMENTOS SEMÁNTICOS PRINCIPALES
    Estilos para header, nav, main, section, article, aside y footer.
    ============================================================ */
 header {
@@ -93,15 +94,46 @@ section {
   border-top: 3px solid #ff6200;
 }
 
+/* Grid de 3 columnas para mostrar tarjetas de productos */
+section > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* En pantallas medianas: 2 columnas */
+@media (max-width: 900px) {
+  section > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* En pantallas pequeñas: 1 columna */
+@media (max-width: 600px) {
+  section > div {
+    grid-template-columns: 1fr;
+  }
+  section article img {
+    height: auto;
+  }
+}
+
 section article {
-  margin: 18px auto;
+  margin: 0;
   padding: 22px;
   background-color: #2a2a2a;
   border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(255, 98, 0, 0.2);
 }
 
 article {
-  width: 86%;
+  width: 100%;
 }
 
 aside {
@@ -120,17 +152,22 @@ footer {
 }
 
 /* ============================================================
-   BLOQUE 4: MENU DE NAVEGACION
+   BLOQUE 4: MENÚ DE NAVEGACIÓN
    Estilos para nav, nav a y nav a:hover.
    ============================================================ */
 nav ul {
   margin: 0;
   padding: 0;
   text-align: center;
+  list-style: none;
+  gap: 12px;
+  justify-content: center;
+  display: flex;
 }
 
 nav li {
   margin: 6px 12px;
+  margin: 0;
 }
 
 nav a {
@@ -138,6 +175,7 @@ nav a {
   border: 1px solid #333333;
   color: #ffffff;
   font-size: 16px;
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -175,14 +213,24 @@ progress {
 }
 
 /* ============================================================
-   BLOQUE 6: IMAGENES Y MULTIMEDIA
+   BLOQUE 6: IMÁGENES Y MULTIMEDIA
    Estilos para img, figure, figcaption, video, audio e iframe.
    ============================================================ */
 img {
-  width: 100%;
-  height: 200px;
+  max-width: 100%;
+  height: auto;
   border: 1px solid #333333;
   background-color: #333333;
+}
+
+section article img {
+  width: 100%;
+  max-width: 100%;
+  height: 320px; /* altura uniforme en escritorio */
+  object-fit: cover;
+  margin: 0 auto 16px;
+  display: block;
+  border-radius: 6px;
 }
 
 figure {
@@ -285,6 +333,28 @@ textarea {
   height: 110px;
 }
 
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  background-color: #333333;
+  border: 2px solid #ff6200;
+  box-shadow: 0 0 8px rgba(255, 98, 0, 0.5);
+}
+
+input:required,
+textarea:required,
+select:required {
+  border: 1px solid #ff6200;
+}
+
+input:required::after,
+textarea:required::after,
+select:required::after {
+  content: " *";
+  color: #ff6200;
+}
+
 button {
   width: 100%;
   padding: 14px;
@@ -344,8 +414,16 @@ td img {
   height: 80px;
 }
 
+tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+tr:nth-child(odd) {
+  background-color: #242424;
+}
+
 /* ============================================================
-   BLOQUE 10: PIE DE PAGINA
+   BLOQUE 10: PIE DE PÁGINA
    Estilos para footer, footer p y footer address.
    ============================================================ */
 footer p {
@@ -358,4 +436,51 @@ footer p {
 footer address {
   color: #cccccc;
   text-align: center;
+}
+
+/* ============================================================
+   BLOQUE 11: CÓDIGO Y ELEMENTOS TÉCNICOS
+   Estilos para code, pre y kbd.
+   ============================================================ */
+code {
+  padding: 2px 6px;
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+  color: #00d4ff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+pre {
+  margin: 16px 0;
+  padding: 16px;
+  background-color: #1e1e1e;
+  border: 1px solid #444444;
+  border-left: 4px solid #ff6200;
+  color: #d4d4d4;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  line-height: 1.4;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: #d4d4d4;
+  border-radius: 0;
+}
+
+kbd {
+  padding: 4px 8px;
+  background-color: #333333;
+  border: 1px solid #555555;
+  border-bottom: 2px solid #222222;
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 #666666;
 }
