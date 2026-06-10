@@ -19,6 +19,7 @@ body {
 /* ============================================================
    BLOQUE 2: TÍTULOS, PÁRRAFOS Y ENLACES
    Estilos para h1, h2, h3, p, a y a:hover.
+   Me gustan los hombres
    ============================================================ */
 h1 {
   margin: 10px 0 20px;
@@ -87,35 +88,11 @@ main {
 }
 
 section {
-  margin: 0 auto 34px;
+  margin: 0 250px 34px;
   padding: 34px;
   background-color: #1e1e1e;
   border: 1px solid #333333;
   border-top: 3px solid #ff6200;
-}
-
-/* Grid de 3 columnas para mostrar tarjetas de productos */
-section > div {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-/* En pantallas medianas: 2 columnas */
-@media (max-width: 900px) {
-  section > div {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* En pantallas pequeñas: 1 columna */
-@media (max-width: 600px) {
-  section > div {
-    grid-template-columns: 1fr;
-  }
-  section article img {
-    height: auto;
-  }
 }
 
 section article {
@@ -124,7 +101,9 @@ section article {
   background-color: #2a2a2a;
   border: 1px solid #3a3a3a;
   border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 section article:hover {
@@ -484,3 +463,4 @@ kbd {
   border-radius: 4px;
   box-shadow: inset 0 1px 0 #666666;
 }
+
