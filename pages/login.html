@@ -1,4 +1,5 @@
 <!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +7,7 @@
     <title>DarkKitchen | Iniciar Sesión</title>
     <link rel="icon" href="../img/icon.ico" />
     <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/login.css" />
   </head>
 
   <body>
@@ -42,9 +44,9 @@
     </header>
 
     <main>
-      <section title="Formulario de inicio de sesión">
+      <section id="login-acceso" class="contenedor-acceso" title="Formulario de inicio de sesión">
         <h2>Acceso a tu Cuenta</h2>
-        <form action="../index.html" method="post">
+        <form id="form-login" class="formulario-acceso" action="../index.html" method="post">
           <div>
             <label for="email">Correo Electrónico:</label>
             <input
@@ -80,6 +82,7 @@
             >
           </div>
           <button
+            class="btn-acceso"
             type="submit"
             title="Entrar a tu cuenta para realizar pedidos"
           >
@@ -89,7 +92,6 @@
         <p>
           ¿No tienes cuenta?
           <a href="registro.html" title="Crear una cuenta nueva">Regístrate</a>
-        </p>
       </section>
     </main>
 

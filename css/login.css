@@ -1,0 +1,96 @@
+/* ============================================================
+   BLOQUE 1: SECCIÓN DE LOGIN
+   Estilos específicos de la sección de login.
+   ============================================================ */
+#login-acceso {
+  background-color: #1e1e1e;
+  padding: 50px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  border-top: 5px solid #00d4ff;
+}
+
+#login-acceso h2 {
+  font-size: 32px;
+  color: #00d4ff;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#login-acceso p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#login-acceso a {
+  color: #00d4ff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   BLOQUE 2: FORMULARIO DE ACCESO
+   Estilos reutilizables para formularios de registro y login.
+   ============================================================ */
+.formulario-acceso {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+
+.formulario-acceso label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+.formulario-acceso input[type="text"],
+.formulario-acceso input[type="email"],
+.formulario-acceso input[type="password"],
+.formulario-acceso input[type="tel"] {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.formulario-acceso input:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+
+.formulario-acceso input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+/* ============================================================
+   BLOQUE 3: BOTONES
+   Estilos específicos de botones de acceso.
+   ============================================================ */
+.btn-acceso {
+  background-color: #00d4ff;
+  color: #121212;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-acceso:hover {
+  background-color: #fff;
+  color: #00d4ff;
+  transform: translateY(-2px);
+}

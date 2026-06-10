@@ -1,0 +1,79 @@
+/* ============================================================
+   BLOQUE 1: SECCIÓN DE PEDIDO
+   Estilos específicos de la sección principal.
+   ============================================================ */
+#seccion-pedido {
+  background: url('../img/burger-bg.jpg') center/cover no-repeat;
+  position: relative;
+  padding: 60px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+}
+
+#seccion-pedido::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(18, 18, 18, 0.85); /* Overlay oscuro */
+  border-radius: 10px;
+  z-index: 0;
+}
+
+#seccion-pedido h2,
+#seccion-pedido form {
+  position: relative;
+  z-index: 1;
+}
+
+#seccion-pedido h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  color: #ffaa00;
+  margin-bottom: 30px;
+}
+
+/* ============================================================
+   BLOQUE 2: FORMULARIO DE CONTACTO
+   Estilos reutilizables o específicos para formularios.
+   ============================================================ */
+.formulario-contacto {
+  background-color: rgba(36, 36, 36, 0.95);
+  border: 2px solid #ff6200;
+  box-shadow: 0 10px 30px rgba(255, 98, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.formulario-contacto fieldset {
+  border-color: rgba(255, 98, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.formulario-contacto legend {
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* ============================================================
+   BLOQUE 3: BOTONES
+   Estilos específicos de botones como btn-enviar.
+   ============================================================ */
+.btn-enviar {
+  background-color: #ff6200;
+  color: #121212;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.btn-enviar:hover {
+  background-color: #ffffff;
+  color: #ff6200;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 98, 0, 0.4);
+}

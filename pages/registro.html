@@ -1,4 +1,5 @@
 <!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +7,7 @@
     <title>DarkKitchen | Registro</title>
     <link rel="icon" href="../img/icon.ico" />
     <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/registro.css" />
   </head>
 
   <body>
@@ -64,14 +66,12 @@
     </header>
 
     <main>
-      <section
-        title="Formulario de registro de usuario"
-      >
+      <section id="registro-usuario" title="Formulario de registro de usuario">
         <h2>
           Crear Cuenta
         </h2>
 
-        <form action="login.html" method="post">
+        <form class="formulario-acceso" action="login.html" method="post">
           <div>
             <label
               for="nombre"
@@ -149,17 +149,13 @@
 
           <div><label for="terminos"><input type="checkbox" id="terminos" name="terminos" title="Aceptar términos y condiciones" required /> Acepto los términos y condiciones</label></div>
 
-          <button
-            type="submit"
-            title="Crear una cuenta nueva"
-          >
+          <button class="btn-acceso" type="submit" title="Crear una cuenta nueva">
             Crear Cuenta
           </button>
         </form>
 
         <p>
           ¿Ya tienes cuenta?
-          <a
             href="login.html"
             title="Volver al inicio de sesión"
             >Inicia sesión</a

@@ -1,0 +1,95 @@
+/* ============================================================
+   BLOQUE 1: SECCIÓN DE REGISTRO
+   Estilos específicos de la sección de registro.
+   ============================================================ */
+#registro-usuario {
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  border-top: 5px solid #ffaa00;
+}
+
+#registro-usuario h2 {
+  font-size: 32px;
+  color: #ffaa00;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#registro-usuario p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#registro-usuario a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   BLOQUE 2: FORMULARIO DE ACCESO
+   Estilos reutilizables para formularios de registro y login.
+   ============================================================ */
+.formulario-acceso {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+
+.formulario-acceso label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+.formulario-acceso input[type="text"],
+.formulario-acceso input[type="email"],
+.formulario-acceso input[type="password"],
+.formulario-acceso input[type="tel"] {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.formulario-acceso input:focus {
+  border-color: #ffaa00;
+  box-shadow: 0 0 10px rgba(255, 170, 0, 0.4);
+}
+
+.formulario-acceso input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+/* ============================================================
+   BLOQUE 3: BOTONES
+   Estilos específicos de botones de acceso.
+   ============================================================ */
+.btn-acceso {
+  background-color: #ffaa00;
+  color: #121212;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-acceso:hover {
+  background-color: #ff6200;
+  color: #fff;
+  transform: translateY(-2px);
+}
