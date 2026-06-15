@@ -15,40 +15,38 @@
 
   <body>
     <header>
-      <div title="Logo de DarkKitchen">DarkKitchen 🍔</div>
+      <a href="index.html" class="logo" title="Logo de DarkKitchen">DarkKitchen <span>🍔</span></a>
 
       <nav>
         <ul>
           <li>
-            <a href="index.html" title="Ir a la página de inicio">
+            <a href="index.html" class="active" title="Ir a la página de inicio">
               <i class="fa-solid fa-house"></i>Inicio</a
             >
           </li>
           <li>
             <a href="pages/nosotros.html" title="Conocer más sobre DarkKitchen">
-              <i class="fa-regular fa-id-badge"></i>
-              Nosotros</a
+              <i class="fa-regular fa-id-badge"></i>Nosotros</a
             >
           </li>
           <li>
-            <a href="pages/menu.html" title="Ver el menú de hamburguesas">
-              <i class="fa-solid fa-bowl-food"></i>
-              Menú</a
+            <a href="pages/servicios.html" title="Ver el menú de hamburguesas">
+              <i class="fa-solid fa-bowl-food"></i>Servicios</a
             >
           </li>
           <li>
-            <a
-              href="pages/promociones.html"
-              title="Ver promociones de DarkKitchen"
+            <a href="pages/galeria.html" title="Ver galería y promociones de DarkKitchen">
+              <i class="fa-solid fa-tags"></i>Galería</a
             >
-              <i class="fa-solid fa-tags"></i>
-              Promociones</a
+          </li>
+          <li>
+            <a href="pages/buscar.html" title="Buscar y filtrar hamburguesas">
+              <i class="fa-solid fa-magnifying-glass"></i>Buscar</a
             >
           </li>
           <li>
             <a href="pages/contacto.html" title="Hacer un pedido">
-              <i class="fa-solid fa-boxes-packing"></i>
-              Pedir Ahora</a
+              <i class="fa-solid fa-boxes-packing"></i>Pedir Ahora</a
             >
           </li>
           <li>
@@ -67,14 +65,14 @@
           Las mejores hamburguesas artesanales de la ciudad, directamente a tu
           puerta. Sin esperas en mesas, solo calidad.
         </p>
-        <a href="pages/menu.html" title="Ir al menú completo de DarkKitchen"
+        <a href="pages/servicios.html" class="btn-primary" style="display: inline-block; width: auto;" title="Ir al menú completo de DarkKitchen"
           >Ver Menú Completo</a
         >
       </section>
 
       <section id="favoritos">
         <h2>Nuestros Favoritos</h2>
-        <div>
+        <div class="tarjetas-container">
           <article class="tarjeta" title="Producto destacado: Classic Smash">
             <img
               src="img/burger1.jpg"
@@ -86,7 +84,7 @@
               Doble carne smash, doble queso cheddar, cebolla caramelizada y
               nuestra salsa secreta.
             </p>
-            <p>$150.00</p>
+            <p class="precio">$150.00</p>
           </article>
 
           <article class="tarjeta" title="Producto destacado: Bacon BBQ">
@@ -100,7 +98,7 @@
               Carne de res, tocino crujiente, aros de cebolla y salsa BBQ
               artesanal.
             </p>
-            <p>$180.00</p>
+            <p class="precio">$180.00</p>
           </article>
 
           <article class="tarjeta" title="Producto destacado: Dark Fries">
@@ -114,7 +112,7 @@
               Papas a la francesa bañadas en queso fundido, trozos de tocino y
               jalapeños.
             </p>
-            <p>$80.00</p>
+            <p class="precio">$80.00</p>
           </article>
         </div>
       </section>
@@ -160,23 +158,11 @@
     <footer>
       <p>&copy; 2026 DarkKitchen. Todos los derechos reservados.</p>
       <p>Proyecto Práctico de Desarrollo Web</p>
-
-      <i class="fa-solid fa-house" title="Inicio"></i>
-      <!-- Casa -->
-      <i class="fa-solid fa-user" title="Usuario"></i>
-      <!-- Usuario -->
-      <i class="fa-solid fa-envelope" title="Correo"></i>
-      <!-- Correo -->
-      <i class="fa-solid fa-phone" title="Teléfono"></i>
-      <!-- Teléfono -->
-      <i class="fa-solid fa-cart-shopping" title="Carrito"></i>
-      <!-- Carrito -->
-      <i class="fa-solid fa-heart" title="Favoritos"></i>
-      <!-- Corazón -->
-      <i class="fa-brands fa-facebook" title="Facebook"></i>
-      <!-- Facebook -->
-      <i class="fa-brands fa-instagram" title="Instagram"></i>
-      <!-- Instagram -->
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="pages/contacto.html" title="Pedir ahora"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
     </footer>
   </body>
 </html>

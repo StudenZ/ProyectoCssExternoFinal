@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DarkKitchen | Buscar Productos</title>
+    <link rel="icon" href="../img/icon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/buscar.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="logo" title="Logo de DarkKitchen">DarkKitchen <span>🍔</span></a>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html" title="Ir a la página de inicio">
+              <i class="fa-solid fa-house"></i>Inicio</a
+            >
+          </li>
+          <li>
+            <a href="nosotros.html" title="Conocer más sobre DarkKitchen">
+              <i class="fa-regular fa-id-badge"></i>Nosotros</a
+            >
+          </li>
+          <li>
+            <a href="servicios.html" title="Ver el menú de hamburguesas">
+              <i class="fa-solid fa-bowl-food"></i>Servicios</a
+            >
+          </li>
+          <li>
+            <a href="galeria.html" title="Ver galería y promociones de DarkKitchen">
+              <i class="fa-solid fa-tags"></i>Galería</a
+            >
+          </li>
+          <li>
+            <a href="buscar.html" class="active" title="Buscar y filtrar hamburguesas">
+              <i class="fa-solid fa-magnifying-glass"></i>Buscar</a
+            >
+          </li>
+          <li>
+            <a href="contacto.html" title="Hacer un pedido">
+              <i class="fa-solid fa-boxes-packing"></i>Pedir Ahora</a
+            >
+          </li>
+          <li>
+            <a href="login.html" title="Iniciar sesión en tu cuenta">
+              <i class="fa-solid fa-user"></i>Iniciar Sesión</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Buscar en DarkKitchen</h1>
+      <p style="text-align: center;">Encuentra rápidamente tu hamburguesa o acompañamiento favorito utilizando nuestros filtros.</p>
+
+      <div class="buscar-layout">
+        <!-- Sidebar de Filtros -->
+        <aside class="filtros-panel" title="Opciones de filtrado de productos">
+          <h3>Filtros rápidos</h3>
+          
+          <div class="filtro-grupo">
+            <label>Categorías</label>
+            <label class="filtro-opcion">
+              <input type="checkbox" name="categoria" value="burgers" checked />
+              Hamburguesas
+            </label>
+            <label class="filtro-opcion">
+              <input type="checkbox" name="categoria" value="sides" checked />
+              Acompañamientos
+            </label>
+            <label class="filtro-opcion">
+              <input type="checkbox" name="categoria" value="drinks" />
+              Bebidas
+            </label>
+          </div>
+
+          <div class="filtro-grupo">
+            <label>Ingredientes</label>
+            <label class="filtro-opcion">
+              <input type="checkbox" name="ingrediente" value="tocino" />
+              Tocino Ahumado
+            </label>
+            <label class="filtro-opcion">
+              <input type="checkbox" name="ingrediente" value="queso" />
+              Doble Queso
+            </label>
+            <label class="filtro-opcion">
+              <input type="checkbox" name="ingrediente" value="picante" />
+              Picante (Habanero)
+            </label>
+          </div>
+
+          <div class="filtro-grupo">
+            <label>Rango de Precio</label>
+            <select title="Selecciona un rango de precios">
+              <option value="todos">Todos los precios</option>
+              <option value="bajo">Menos de $100.00</option>
+              <option value="medio">$100.00 - $180.00</option>
+              <option value="alto">Más de $180.00</option>
+            </select>
+          </div>
+        </aside>
+
+        <!-- Resultados -->
+        <section class="resultados-panel" title="Resultados de búsqueda">
+          <form class="busqueda-barra" action="#" method="GET" onsubmit="return false;">
+            <input
+              type="text"
+              placeholder="Buscar por nombre (ej: Bacon, Smash, Papas...)"
+              title="Introduce palabras clave de búsqueda"
+            />
+            <button class="btn-primary" type="submit" title="Realizar la búsqueda">Buscar</button>
+          </form>
+
+          <div class="resultados-grid" title="Listado de hamburguesas encontradas">
+            <article class="tarjeta-resultado" title="Classic Smash Burger">
+              <img src="../img/burger1.jpg" alt="Classic Smash Burger" />
+              <div>
+                <h4>Classic Smash</h4>
+                <p>Dos carnes smash, queso fundido, pepinillo y aderezo especial en brioche.</p>
+              </div>
+              <div class="precio-compra">
+                <span class="precio">$150.00</span>
+                <a href="contacto.html" class="btn-pedir" title="Pedir Classic Smash">Pedir</a>
+              </div>
+            </article>
+
+            <article class="tarjeta-resultado" title="Bacon BBQ Burger">
+              <img src="../img/burger2.jpg" alt="Bacon BBQ Burger" />
+              <div>
+                <h4>Bacon BBQ</h4>
+                <p>Carne seleccionada, tocino ahumado grueso, aros de cebolla y salsa BBQ casera.</p>
+              </div>
+              <div class="precio-compra">
+                <span class="precio">$180.00</span>
+                <a href="contacto.html" class="btn-pedir" title="Pedir Bacon BBQ">Pedir</a>
+              </div>
+            </article>
+
+            <article class="tarjeta-resultado" title="Monster Double Burger">
+              <img src="../img/burger3.jpg" alt="Monster Double Burger" />
+              <div>
+                <h4>Monster Double</h4>
+                <p>Cuatro piezas de carne smash, cuatro rebanadas de cheddar, tocino y habanero.</p>
+              </div>
+              <div class="precio-compra">
+                <span class="precio">$220.00</span>
+                <a href="contacto.html" class="btn-pedir" title="Pedir Monster Double">Pedir</a>
+              </div>
+            </article>
+
+            <article class="tarjeta-resultado" title="Dark Fries">
+              <img src="../img/fries.jpg" alt="Dark Fries" />
+              <div>
+                <h4>Dark Fries</h4>
+                <p>Crujientes papas fritas caseras bañadas en rica salsa de queso cheddar caliente.</p>
+              </div>
+              <div class="precio-compra">
+                <span class="precio">$80.00</span>
+                <a href="contacto.html" class="btn-pedir" title="Pedir Dark Fries">Pedir</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 DarkKitchen. Todos los derechos reservados.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="contacto.html" title="Pedir ahora"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </footer>
+  </body>
+</html>

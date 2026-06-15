@@ -1,107 +1,159 @@
 /* ============================================================
-   BLOQUE 1: PRESENTACIÓN PRINCIPAL
-   Estilos propios de la sección de presentación.
+   BLOQUE 1: SECCIÓN DE PRESENTACIÓN (HERO)
+   Estilos específicos del banner de bienvenida.
    ============================================================ */
 #presentacion {
   text-align: center;
-  background: linear-gradient(135deg, #1e1e1e 0%, #2c1a10 100%);
-  padding: 60px 20px;
-  border-radius: 12px;
-  border-bottom: 4px solid #ff6200;
+  background: linear-gradient(135deg, rgba(20, 21, 27, 0.9) 0%, rgba(44, 26, 16, 0.9) 100%), 
+              url('../img/burger-bg.jpg') center/cover no-repeat;
+  padding: 80px 20px;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  border-bottom: 4px solid var(--accent-primary);
   margin-bottom: 40px;
-}
-
-#presentacion h1 {
-  font-size: 48px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  letter-spacing: 2px;
-}
-
-#presentacion p {
-  font-size: 20px;
-  max-width: 600px;
-  margin: 0 auto 20px auto;
-  color: #eeeeee;
-}
-
-/* ============================================================
-   BLOQUE 2: FAVORITOS Y TARJETAS
-   Estilos de los elementos destacados y tarjetas.
-   ============================================================ */
-#favoritos {
-  background-color: #1a1a1a;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-}
-
-#favoritos div {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-@media (min-width: 768px) {
-  #favoritos div {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.tarjeta {
-  text-align: center;
-  background-color: #242424;
-  border: 1px solid #ff6200;
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.tarjeta:hover {
-  transform: scale(1.05);
-  background-color: #2d2d2d;
-  box-shadow: 0 10px 20px rgba(255, 98, 0, 0.3);
-}
-
-.tarjeta h3 {
-  color: #ffffff;
-  border-bottom: 2px dashed #ff6200;
-  padding-bottom: 10px;
-}
-
-/* ============================================================
-   BLOQUE 3: PREGUNTAS FRECUENTES
-   Estilos específicos para la sección de FAQ.
-   ============================================================ */
-#faq {
-  padding: 30px;
-  background-color: #121212;
-  border-left: 5px solid #ff6200;
-  margin-top: 40px;
-}
-
-#faq details {
-  background-color: #1f1f1f;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  position: relative;
   overflow: hidden;
 }
 
+#presentacion h1 {
+  font-size: 3rem;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+}
+
+#presentacion p {
+  font-size: 1.25rem;
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   BLOQUE 2: SECCIÓN FAVORITOS (TARJETAS EN FLEXBOX)
+   Estilos de los productos destacados en la landpage.
+   ============================================================ */
+#favoritos {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-md);
+  padding: 40px;
+}
+
+#favoritos h2 {
+  text-align: center;
+  color: var(--accent-primary);
+  margin-bottom: 30px;
+}
+
+.tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.tarjeta {
+  flex: 1 1 280px;
+  max-width: 340px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.tarjeta h3 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.tarjeta p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  flex-grow: 1; /* Hace que las descripciones crezcan para nivelar el botón/precio */
+}
+
+.tarjeta .precio {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  margin-top: auto;
+}
+
+/* ============================================================
+   BLOQUE 3: PREGUNTAS FRECUENTES (ACCORDION)
+   Estilos para los desplegables detallados del FAQ.
+   ============================================================ */
+#faq {
+  padding: 40px;
+  background-color: var(--bg-secondary);
+  border-left: 4px solid var(--accent-primary);
+  margin-top: 40px;
+}
+
+#faq h2 {
+  color: var(--accent-primary);
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+#faq details {
+  background-color: var(--bg-tertiary);
+  margin-bottom: 12px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+#faq details[open] {
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 #faq summary {
-  padding: 15px;
-  font-weight: bold;
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 1.05rem;
   cursor: pointer;
-  background-color: #262626;
-  transition: background-color 0.2s;
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+  user-select: none;
+  transition: all var(--transition-fast);
 }
 
 #faq summary:hover {
-  background-color: #ff6200;
-  color: #121212;
+  background-color: rgba(255, 85, 0, 0.05);
+  color: var(--accent-primary);
 }
 
 #faq p {
-  padding: 15px;
+  padding: 16px 20px;
   margin: 0;
-  background-color: #1f1f1f;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
 }

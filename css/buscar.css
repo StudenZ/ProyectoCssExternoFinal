@@ -1,0 +1,180 @@
+/* ============================================================
+   BLOQUE 1: CONTENEDOR DE BÚSQUEDA (GRID DE DOS COLUMNAS)
+   Disposición lateral para filtros y resultados en escritorio.
+   ============================================================ */
+.buscar-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .buscar-layout {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+/* ============================================================
+   BLOQUE 2: PANEL DE FILTROS (SIDEBAR)
+   Estilos específicos para la barra lateral y controles de filtrado.
+   ============================================================ */
+.filtros-panel {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  align-self: start;
+}
+
+.filtros-panel h3 {
+  font-size: 1.25rem;
+  color: var(--accent-primary);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.filtro-grupo {
+  margin-bottom: 20px;
+}
+
+.filtro-grupo:last-child {
+  margin-bottom: 0;
+}
+
+.filtro-grupo label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+/* Checkbox personalizado */
+.filtro-opcion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+.filtro-opcion input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent-primary);
+}
+
+.filtro-opcion:hover {
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   BLOQUE 3: ÁREA DE RESULTADOS
+   Buscador superior y grid de resultados.
+   ============================================================ */
+.resultados-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Caja de búsqueda principal */
+.busqueda-barra {
+  display: flex;
+  gap: 10px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 15px;
+}
+
+.busqueda-barra input {
+  flex-grow: 1;
+}
+
+.busqueda-barra button {
+  width: auto;
+  padding: 0 24px;
+}
+
+/* Grid de hamburguesas filtradas */
+.resultados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas individuales de búsqueda */
+.tarjeta-resultado {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.tarjeta-resultado:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.tarjeta-resultado img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 12px;
+}
+
+.tarjeta-resultado h4 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.tarjeta-resultado p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+
+.tarjeta-resultado .precio-compra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.tarjeta-resultado .precio {
+  font-weight: 700;
+  color: var(--accent-secondary);
+  font-size: 1.15rem;
+}
+
+.tarjeta-resultado .btn-pedir {
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+
+.tarjeta-resultado .btn-pedir:hover {
+  background-color: var(--accent-secondary);
+  color: var(--bg-primary);
+}

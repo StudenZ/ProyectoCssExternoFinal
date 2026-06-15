@@ -1,6 +1,35 @@
 /* ============================================================
-   BLOQUE 1: CONFIGURACIÓN GENERAL
-   Selector universal, body, fuente, fondo, color e interlineado.
+   BLOQUE 1: VARIABLES Y SISTEMA DE DISEÑO
+   Definición de paleta de colores, fuentes, espaciados y sombras.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #0a0b0e;
+  --bg-secondary: #14151b;
+  --bg-tertiary: #1d1e26;
+  --accent-primary: #ff5500;
+  --accent-secondary: #ffaa00;
+  --text-primary: #ffffff;
+  --text-secondary: #9ea0a9;
+  --text-muted: #64666f;
+  --border-color: #282a36;
+  --border-hover: #ff5500;
+  --font-main: 'Outfit', sans-serif;
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 15px rgba(255, 85, 0, 0.2);
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* ============================================================
+   BLOQUE 2: RESET Y CONFIGURACIÓN BASE
+   Selector universal, body y estructura de página.
    ============================================================ */
 * {
   margin: 0;
@@ -9,458 +38,398 @@
 }
 
 body {
-  background-color: #121212;
-  color: #ffffff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
   font-size: 16px;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ============================================================
-   BLOQUE 2: TÍTULOS, PÁRRAFOS Y ENLACES
-   Estilos para h1, h2, h3, p, a y a:hover.
-   Me gustan los hombres
+   BLOQUE 3: TIPOGRAFÍA Y ENLACES
+   Títulos generales, párrafos y enlaces interactivos.
    ============================================================ */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
 h1 {
-  margin: 10px 0 20px;
-  color: #ff6200;
-  font-size: 42px;
-  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
-  margin: 10px 0 18px;
-  color: #ff6200;
-  font-size: 30px;
-  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
-  margin: 14px 0 10px;
-  color: #ff6200;
-  font-size: 22px;
-  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 p {
-  margin: 0 0 16px;
-  color: #d6d6d6;
-  font-size: 17px;
-  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
 }
 
 a {
-  color: #ff6200;
-  font-size: 16px;
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: #ffffff;
-  background-color: #ff6200;
+  color: var(--accent-secondary);
 }
 
 /* ============================================================
-   BLOQUE 3: ELEMENTOS SEMÁNTICOS PRINCIPALES
-   Estilos para header, nav, main, section, article, aside y footer.
+   BLOQUE 4: CABECERA Y NAVEGACIÓN (FLEXBOX)
+   Estructura sticky glassmorphism y menú adaptativo.
    ============================================================ */
 header {
-  background-color: #1e1e1e;
-  padding: 18px 30px;
-  border-bottom: 3px solid #ff6200;
-  text-align: center;
-}
-
-header div {
-  margin-bottom: 12px;
-  color: #ff6200;
-  font-size: 26px;
-}
-
-nav {
-  background-color: #1e1e1e;
-  text-align: center;
-}
-
-main {
-  width: 92%;
-  margin: 0 auto;
-  padding: 38px 0;
-}
-
-section {
-  margin: 0 250px 34px;
-  padding: 34px;
-  background-color: #1e1e1e;
-  border: 1px solid #333333;
-  border-top: 3px solid #ff6200;
-}
-
-section article {
-  margin: 0;
-  padding: 22px;
-  background-color: #2a2a2a;
-  border: 1px solid #3a3a3a;
-  border-radius: 8px;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
-}
-
-section article:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(255, 98, 0, 0.2);
-}
-
-article {
-  width: 100%;
-}
-
-aside {
-  margin: 24px 0;
-  padding: 20px;
-  background-color: #242424;
-  border-left: 4px solid #ff6200;
-}
-
-footer {
-  margin-top: 30px;
-  padding: 24px;
-  background-color: #1e1e1e;
-  border-top: 1px solid #333333;
-  text-align: center;
-}
-
-/* ============================================================
-   BLOQUE 4: MENÚ DE NAVEGACIÓN
-   Estilos para nav, nav a y nav a:hover.
-   ============================================================ */
-nav ul {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  list-style: none;
-  gap: 12px;
-  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(10, 11, 14, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 5%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav li {
-  margin: 6px 12px;
-  margin: 0;
-}
-
-nav a {
-  padding: 8px 12px;
-  border: 1px solid #333333;
-  color: #ffffff;
-  font-size: 16px;
+header .logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
 }
 
-nav a:hover {
-  color: #121212;
-  background-color: #ff6200;
-  border: 1px solid #ff6200;
+header .logo span {
+  color: var(--accent-primary);
 }
 
-/* ============================================================
-   BLOQUE 5: CONTENIDO Y SECCIONES
-   Estilos para main, section, article y aside.
-   ============================================================ */
-section div {
-  margin: 10px 0;
-}
-
-article div {
-  padding: 10px 0;
-}
-
-details {
-  margin-bottom: 16px;
-  padding: 16px;
-  background-color: #2a2a2a;
-  border: 1px solid #3a3a3a;
-}
-
-summary {
-  color: #ff6200;
-}
-
-progress {
-  width: 100%;
-  height: 20px;
-}
-
-/* ============================================================
-   BLOQUE 6: IMÁGENES Y MULTIMEDIA
-   Estilos para img, figure, figcaption, video, audio e iframe.
-   ============================================================ */
-img {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #333333;
-  background-color: #333333;
-}
-
-section article img {
-  width: 100%;
-  max-width: 100%;
-  height: 320px; /* altura uniforme en escritorio */
-  object-fit: cover;
-  margin: 0 auto 16px;
-  display: block;
-  border-radius: 6px;
-}
-
-figure {
-  margin: 20px auto;
-  padding: 14px;
-  background-color: #242424;
-  border: 1px solid #333333;
-  text-align: center;
-}
-
-figure img {
-  width: 100%;
-  height: 260px;
-}
-
-figcaption {
-  padding-top: 8px;
-  color: #cccccc;
-  font-size: 14px;
-  text-align: center;
-}
-
-video,
-audio,
-iframe {
-  width: 100%;
-  height: 320px;
-  margin: 12px 0;
-  border: 1px solid #333333;
-  background-color: #1e1e1e;
-}
-
-audio {
-  height: 45px;
-}
-
-/* ============================================================
-   BLOQUE 7: LISTAS
-   Estilos para ul, ol y li.
-   ============================================================ */
-ul,
-ol {
-  margin: 0 0 18px 24px;
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
   padding: 0;
-  color: #d6d6d6;
 }
 
-li {
-  margin-bottom: 8px;
+nav a {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+}
+
+nav a:hover, nav a.active {
+  color: var(--text-primary);
+  background-color: rgba(255, 85, 0, 0.1);
+  border-color: rgba(255, 85, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  nav a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
 }
 
 /* ============================================================
-   BLOQUE 8: FORMULARIOS
-   Estilos para form, label, input, textarea, select y button.
+   BLOQUE 5: MAQUETACIÓN GENERAL Y CONTENEDORES
+   Estructura de main, sections y espaciado dinámico.
+   ============================================================ */
+main {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   BLOQUE 6: ELEMENTOS DE FORMULARIO COMUNES
+   Inputs, selects, textareas y botones base del proyecto.
    ============================================================ */
 form {
-  width: 90%;
-  margin: 0 auto;
-  padding: 24px;
-  background-color: #242424;
-  border: 1px solid #333333;
+  width: 100%;
+  background-color: var(--bg-secondary);
 }
 
 fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
   margin-bottom: 24px;
-  padding: 18px;
-  border: 1px solid #444444;
 }
 
 legend {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent-primary);
   padding: 0 10px;
-  color: #ff6200;
 }
 
 label {
-  margin: 10px 0 6px;
-  color: #e0e0e0;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
 }
 
-input,
-textarea,
-select {
-  width: 94%;
-  margin-bottom: 14px;
-  padding: 12px;
-  border: 1px solid #444444;
-  background-color: #2a2a2a;
-  color: #ffffff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-}
-
-label input {
-  width: auto;
-  height: 16px;
-  margin-right: 8px;
-}
-
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="time"],
+select,
 textarea {
-  height: 110px;
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
 }
 
 input:focus,
-textarea:focus,
-select:focus {
+select:focus,
+textarea:focus {
   outline: none;
-  background-color: #333333;
-  border: 2px solid #ff6200;
-  box-shadow: 0 0 8px rgba(255, 98, 0, 0.5);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.2);
 }
 
-input:required,
-textarea:required,
-select:required {
-  border: 1px solid #ff6200;
+textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
-input:required::after,
-textarea:required::after,
-select:required::after {
-  content: " *";
-  color: #ff6200;
-}
-
-button {
+/* Estilos de botones generales */
+.btn-primary {
+  display: inline-block;
   width: 100%;
-  padding: 14px;
-  border: 1px solid #ff6200;
-  background-color: #ff6200;
-  color: #ffffff;
-  font-size: 17px;
+  padding: 14px 28px;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
 }
 
-button:hover {
-  background-color: #ffffff;
-  color: #ff6200;
+.btn-primary:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
 }
 
 /* ============================================================
-   BLOQUE 9: TABLAS
-   Estilos para table, thead, tbody, tr, th y td.
+   BLOQUE 7: TABLAS Y ELEMENTOS MULTIMEDIA
+   Estilos base para tablas de datos y elementos incrustados.
    ============================================================ */
 table {
   width: 100%;
-  margin: 20px 0;
-  background-color: #1e1e1e;
-  color: #f5f5f5;
-  border: 1px solid #444444;
+  border-collapse: collapse;
+  margin: 24px 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
-thead {
-  background-color: #ff6200;
-  color: #121212;
-}
-
-tbody {
-  background-color: #242424;
-}
-
-tr {
-  border-bottom: 1px solid #444444;
-}
-
-th,
-td {
-  padding: 12px;
-  border: 1px solid #444444;
-  text-align: center;
+th, td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
 }
 
 th {
-  font-size: 16px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
-td {
-  font-size: 15px;
-}
-
-td img {
-  width: 100px;
-  height: 80px;
+tr:last-child td {
+  border-bottom: none;
 }
 
 tr:nth-child(even) {
-  background-color: #1e1e1e;
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
-tr:nth-child(odd) {
-  background-color: #242424;
+iframe {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
 }
 
 /* ============================================================
-   BLOQUE 10: PIE DE PÁGINA
-   Estilos para footer, footer p y footer address.
+   BLOQUE 8: PIE DE PÁGINA (FLEXBOX)
+   Estructura adaptativa de copyright y redes.
    ============================================================ */
+footer {
+  margin-top: 60px;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 30px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
 footer p {
-  margin: 5px 0;
-  color: #aaaaaa;
-  font-size: 15px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
   text-align: center;
 }
 
-footer address {
-  color: #cccccc;
-  text-align: center;
+footer .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+footer .social-icons a {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  transition: color var(--transition-fast);
+}
+
+footer .social-icons a:hover {
+  color: var(--accent-primary);
 }
 
 /* ============================================================
-   BLOQUE 11: CÓDIGO Y ELEMENTOS TÉCNICOS
-   Estilos para code, pre y kbd.
+   BLOQUE 9: ESTILOS INTEGRADOS (NOSOTROS)
+   Copias integradas de nosotros.css para mantener estructura limpia.
    ============================================================ */
-code {
-  padding: 2px 6px;
-  background-color: #2a2a2a;
-  border: 1px solid #444444;
-  color: #00d4ff;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 14px;
-  border-radius: 3px;
+#nosotros-historia {
+  border-left: 4px solid var(--accent-primary);
+  box-shadow: var(--shadow-md);
 }
 
-pre {
-  margin: 16px 0;
-  padding: 16px;
-  background-color: #1e1e1e;
-  border: 1px solid #444444;
-  border-left: 4px solid #ff6200;
-  color: #d4d4d4;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 14px;
-  overflow-x: auto;
-  line-height: 1.4;
+#nosotros-historia h1 {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
 }
 
-pre code {
+#nosotros-historia progress {
+  width: 100%;
+  height: 20px;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+#nosotros-historia progress::-webkit-progress-bar {
+  background-color: var(--bg-tertiary);
+}
+
+#nosotros-historia progress::-webkit-progress-value {
+  background-color: var(--accent-primary);
+}
+
+#nosotros-historia span {
+  font-weight: 700;
+  color: var(--accent-secondary);
+}
+
+.nota {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--accent-secondary);
+  padding: 20px;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 25px;
+}
+
+/* ============================================================
+   BLOQUE 10: ESTILOS INTEGRADOS (LOGIN & REGISTRO)
+   Copias integradas de login.css y registro.css.
+   ============================================================ */
+#login-acceso, #registro-usuario {
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: var(--shadow-lg);
+  border-top: 4px solid var(--accent-primary);
+}
+
+#login-acceso h2, #registro-usuario h2 {
+  color: var(--accent-primary);
+  text-align: center;
+}
+
+#login-acceso p, #registro-usuario p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.formulario-acceso {
   padding: 0;
-  background-color: transparent;
   border: none;
-  color: #d4d4d4;
-  border-radius: 0;
 }
 
-kbd {
-  padding: 4px 8px;
-  background-color: #333333;
-  border: 1px solid #555555;
-  border-bottom: 2px solid #222222;
-  color: #ffffff;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 13px;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 0 #666666;
+.formulario-acceso .campo-grupo {
+  margin-bottom: 20px;
 }
 
+.formulario-acceso label {
+  color: var(--text-secondary);
+}
+
+.formulario-acceso input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
